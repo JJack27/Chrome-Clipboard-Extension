@@ -88,6 +88,7 @@ function copyToClipboard() {
         navigator.clipboard.writeText(content['content']).then(() => {
             let activeElement = document.activeElement;
             if (activeElement.tagName === 'INPUT') {
+                // @ts-ignore
                 activeElement.value = content['content'];
             }
         })

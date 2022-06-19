@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "clipboard",
+  "short_name": "clipboard",
+  "version": "1.0.0",
+  "description": "A clipboard that makes your life easier",
+  "permissions": ["storage", "activeTab", "scripting", "contextMenus", "clipboardRead"],
+  "action": {
+    "default_popup": "index.html?#/popup",
+    "default_title": "Clipboard"
+  },
+  "options_page": "index.html?#/options",
+  "chrome_url_overrides": {
+    "newtab": "index.html?#/tab"
+  },
+  "content_scripts": [
+    {
+      "js": [
+        "contentPage.js"
+      ],
+      "matches": [
+        "<all_urls>"
+      ]
+    }
+  ],
+  "background": {
+    "service_worker": "serviceWorker.js"
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'"
+  }
+}
