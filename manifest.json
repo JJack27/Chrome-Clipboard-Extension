@@ -1,0 +1,10 @@
+{
+    "name": "Clipper",
+    "description": "A clipboard tool that makes your life easier",
+    "version": "1.0",
+    "manifest_version": 3,
+    "background": {
+        "service_worker": "clipper.js"
+    },
+    "permissions": ["storage", "activeTab", "scripting", "contextMenus", "clipboard-read", "clipboard-write", "clipboardRead"]
+}
